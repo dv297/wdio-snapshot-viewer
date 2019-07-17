@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
 
 :root {
-    --app-instruction-height: 175px;
+    --app-instruction-height: 200px;
     --search-bar-height: 50px;
 }
 
@@ -21,9 +21,9 @@
 
 .app-instructions {
     flex-shrink: 1;
-    padding: 40px 40px 50px 40px;
+    padding: 40px;
     position: relative;
-    height: var(--app-instruction-height);
+    min-height: var(--app-instruction-height);
     width: 100%;
     display: block;
     box-shadow: 0 5px 15px 0 hsla(0, 0%, 0%, 0.15);
