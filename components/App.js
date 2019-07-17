@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './reset.css';
 import './style.css';
 
-import SearchBar from './SearchBar';
-import Results from './Results';
+import SearchBar from './SearchBar/SearchBar';
+import Results from './Results/Results';
 
 function App() {
   const [pullRequestUrl, setPullRequestUrl] = useState('');
