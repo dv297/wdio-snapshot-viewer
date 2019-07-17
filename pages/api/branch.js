@@ -35,5 +35,4 @@ export default (req, res) => {
     .catch((err) => {
       res.end(JSON.stringify(err));
     });
-
-}
+};

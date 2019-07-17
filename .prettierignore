@@ -7,3 +7,4 @@ dist/
 **/aggregated-translations/*.*
 README.md
 build_output/
+.next/

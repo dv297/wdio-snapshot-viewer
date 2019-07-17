@@ -32,13 +32,16 @@ const GithubService = {
 
       const apiRoute = `${getRestAPIBaseUrl(baseUrl)}/repos/${owner}/${project}/pulls/${pullRequestNumber}/files`;
 
-      const numberOfPages = await axios.head(apiRoute).then((result) => {
-        if (!result.headers.link) {
-          return 1;
-        }
-        const lastRel = parseLinkHeader(result.headers.link).rels.last.href;
-        return Number(lastRel.split('=')[1]);
-      }).catch(reject);
+      const numberOfPages = await axios
+        .head(apiRoute)
+        .then((result) => {
+          if (!result.headers.link) {
+            return 1;
+          }
+          const lastRel = parseLinkHeader(result.headers.link).rels.last.href;
+          return Number(lastRel.split('=')[1]);
+        })
+        .catch(reject);
 
       const allFiles = await Promise.all(
         [...Array(numberOfPages)].map((_, index) => {
@@ -54,11 +57,14 @@ const GithubService = {
                 ({ filename }) => filename.match(snapshotRegex) && filename.match(wdioRegex),
               );
               return wdioEntries;
-            }).catch(reject);
+            })
+            .catch(reject);
         }),
-      ).then((arrays) => {
-        return [].concat.apply([], arrays);
-      }).catch(reject);
+      )
+        .then((arrays) => {
+          return [].concat.apply([], arrays);
+        })
+        .catch(reject);
 
       resolve(allFiles);
     });

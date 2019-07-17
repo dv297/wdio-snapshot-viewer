@@ -15,7 +15,7 @@ export default (req, res) => {
     res.send({
       status: 'error',
       message: 'url query parameter not provided',
-    })
+    });
   }
 
   res.setHeader('Content-Type', 'application/json');
@@ -27,5 +27,4 @@ export default (req, res) => {
     .catch((err) => {
       res.end(JSON.stringify(err));
     });
-
-}
+};

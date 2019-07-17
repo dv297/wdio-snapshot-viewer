@@ -15,7 +15,11 @@ const ApiService = {
       }
 
       const apiRoute = `/api/snapshots?url=${pullRequestUrl}`;
-      axios.get(apiRoute).then(result => result.data).then(resolve).catch(reject);
+      axios
+        .get(apiRoute)
+        .then((result) => result.data)
+        .then(resolve)
+        .catch(reject);
     });
   },
   getMasterBranchData: (pullRequestUrl, filename) => {
@@ -25,7 +29,11 @@ const ApiService = {
       }
 
       const apiRoute = `/api/branch?url=${pullRequestUrl}&filename=${filename}`;
-      axios.get(apiRoute).then(result => result.data).then(resolve).catch(reject);
+      axios
+        .get(apiRoute)
+        .then((result) => result.data)
+        .then(resolve)
+        .catch(reject);
     });
   },
 };

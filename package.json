@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "format": "prettier --config ./prettier.config.js --write \"./**/*.js?(x)\" \"./**/*.md\""
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
@@ -15,5 +16,8 @@
     "react-compare-image": "^1.3.0",
     "react-dom": "16.8.6",
     "react-loading-overlay": "^1.0.1"
+  },
+  "devDependencies": {
+    "prettier": "^1.18.2"
   }
 }
